@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 41% 4%;
+    --foreground: 40 33% 93%;
+    --card: 219 38% 8%;
+    --card-foreground: 40 33% 93%;
+    --primary: 41 74% 65%;
+    --primary-foreground: 220 41% 6%;
+    --secondary: 219 28% 13%;
+    --secondary-foreground: 40 33% 93%;
+    --muted: 219 24% 14%;
+    --muted-foreground: 40 12% 66%;
+    --accent: 41 74% 65%;
+    --accent-foreground: 220 41% 6%;
+    --destructive: 0 68% 54%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 219 20% 18%;
+    --input: 219 20% 18%;
+    --ring: 41 74% 65%;
+    --radius: 0.75rem;
+    --gold-300: 243 211 138;
+    --gold-400: 238 196 106;
+    --gold-500: 224 171 62;
+    --gold-600: 192 140 39;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    background-image: radial-gradient(circle at 18% -10%, rgba(238, 196, 106, 0.09), transparent 42%),
+      radial-gradient(circle at 88% 8%, rgba(74, 116, 255, 0.08), transparent 38%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: rgba(238, 196, 106, 0.28);
+    color: #fffaf0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 3px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #070b14;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #232c40;
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #33405c;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator,
+  input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.8);
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  .container-narrow {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-gold-400;
+  }
+
+  .eyebrow::before {
+    content: "";
+    @apply h-px w-7 bg-gold-400/70;
+  }
+
+  .surface {
+    @apply rounded-2xl border border-white/[0.07] bg-white/[0.025] backdrop-blur-sm;
+  }
+
+  .surface-hover {
+    @apply transition duration-300 hover:border-gold-400/35 hover:bg-white/[0.045];
+  }
+
+  .gold-text {
+    @apply bg-gradient-to-r from-gold-300 via-gold-400 to-gold-600 bg-clip-text text-transparent;
+  }
+
+  .hairline {
+    @apply border-t border-white/[0.08];
+  }
+
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.32;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.22'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+  }
+
+  .prose-editorial {
+    @apply text-[1.02rem] leading-[1.85] text-cream/80;
+  }
+  .prose-editorial p {
+    @apply mb-5;
+  }
+  .prose-editorial h2 {
+    @apply mb-4 mt-10 text-2xl font-semibold text-cream sm:text-3xl;
+  }
+  .prose-editorial h3 {
+    @apply mb-3 mt-8 text-xl font-semibold text-cream;
+  }
+  .prose-editorial h4 {
+    @apply mb-3 mt-6 text-lg font-semibold text-cream;
+  }
+  .prose-editorial ul {
+    @apply mb-5 list-disc space-y-2 pl-6 marker:text-gold-400;
+  }
+  .prose-editorial ol {
+    @apply mb-5 list-decimal space-y-2 pl-6 marker:text-gold-400;
+  }
+  .prose-editorial a {
+    @apply text-gold-300 underline decoration-gold-400/40 underline-offset-4 hover:decoration-gold-400;
+  }
+  .prose-editorial strong {
+    @apply text-cream;
+  }
+  .prose-editorial blockquote {
+    @apply my-8 border-l-2 border-gold-400/70 pl-6 font-display text-xl italic leading-relaxed text-cream/90;
+  }
+  .prose-editorial img {
+    @apply my-8 w-full rounded-xl border border-white/10;
+  }
+  .prose-editorial hr {
+    @apply my-10 border-white/10;
+  }
+  .prose-editorial figcaption {
+    @apply mt-2 text-center text-xs uppercase tracking-wider text-muted-foreground;
+  }
+
+  .rte-content:empty::before {
+    content: attr(data-placeholder);
+    color: rgba(250, 245, 235, 0.3);
+    pointer-events: none;
+  }
+  .rte-content p {
+    @apply mb-3;
+  }
+  .rte-content h2 {
+    @apply mb-2 mt-6 text-xl font-semibold text-cream;
+  }
+  .rte-content h3 {
+    @apply mb-2 mt-5 text-lg font-semibold text-cream;
+  }
+  .rte-content ul {
+    @apply mb-3 list-disc space-y-1 pl-5 marker:text-gold-400;
+  }
+  .rte-content ol {
+    @apply mb-3 list-decimal space-y-1 pl-5 marker:text-gold-400;
+  }
+  .rte-content a {
+    @apply text-gold-300 underline underline-offset-2;
+  }
+  .rte-content blockquote {
+    @apply my-4 border-l-2 border-gold-400/60 pl-4 italic text-cream/70;
+  }
+  .rte-content strong {
+    @apply text-cream;
+  }
+
+  .skeleton {
+    @apply animate-shimmer rounded-md bg-[length:200%_100%];
+    background-image: linear-gradient(90deg, #131b2e 25%, #1c2740 37%, #131b2e 63%);
+  }
+
+  .input-base {
+    @apply flex h-11 w-full rounded-lg border border-white/10 bg-white/[0.03] px-3.5 py-2 text-sm text-cream shadow-sm transition placeholder:text-cream/35 focus-visible:border-gold-400/60 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold-400/30 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .admin-grid-bg {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
