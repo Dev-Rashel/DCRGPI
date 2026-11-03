@@ -18,6 +18,9 @@ dist/
 .env.*.local
 !.env.example
 
+# local deployment tokens (never commit)
+.secrets/
+
 # misc
 .DS_Store
 *.pem
