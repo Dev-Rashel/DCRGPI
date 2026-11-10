@@ -12,7 +12,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Our Team",
   description:
-    "Meet the executive committee, trainers, organizers and active debaters of the Debating Club of RPI.",
+    "Meet the executive committee, trainers, organizers and active debaters of DCRGPI.",
   alternates: { canonical: "/team" },
 };
 
@@ -41,7 +41,7 @@ export default async function TeamPage() {
             The voices behind <span className="gold-text italic">the club</span>
           </>
         }
-        description="Student leaders, trainers and debaters who give their time so that every member can find their voice. Meet the committee that keeps the floor open."
+        description="শিক্ষার্থী নেতা, প্রশিক্ষক ও বিতার্কিকরা নিজেদের সময় দেন যাতে প্রতিটি সদস্য নিজের কণ্ঠ খুঁজে পান। সেই কমিটির সঙ্গে পরিচিত হোন, যারা মঞ্চ সবসময় খোলা রাখে — আর মানদণ্ড ক্রমেই উঁচু করে।"
         breadcrumb={[{ label: "Our Team" }]}
       />
 
@@ -115,7 +115,7 @@ export default async function TeamPage() {
             <div className="rounded-2xl border border-dashed border-white/10 py-20 text-center">
               <Users className="mx-auto h-8 w-8 text-gold-400/50" />
               <p className="mt-4 font-display text-2xl text-cream/80">The committee is being updated</p>
-              <p className="mt-2 text-sm text-cream/45">Please check back soon to meet the team.</p>
+              <p className="mt-2 text-sm text-cream/45">টিমের সঙ্গে পরিচিত হতে শিগগিরই আবার দেখুন।</p>
             </div>
           )}
 
@@ -126,7 +126,7 @@ export default async function TeamPage() {
                 Your name could be on this page
               </h2>
               <p className="mt-2 max-w-lg text-sm text-cream/55">
-                Every committee member started as a first-time debater. Apply to join the next intake and grow with us.
+                প্রতিটি কমিটি সদস্যও একসময় প্রথমবারের বিতার্কিক হিসেবে শুরু করেছিলেন। পরবর্তী ব্যাচে যোগ দিন এবং আমাদের সঙ্গে বেড়ে উঠুন।
               </p>
             </div>
             <Link

@@ -61,7 +61,7 @@ export default async function EventDetailPage({ params }: Params) {
     location: { "@type": "Place", name: event.venue, address: settings.contactInfo.address },
     image: event.image || undefined,
     description: event.description.replace(/<[^>]*>/g, " "),
-    organizer: { "@type": "Organization", name: "Debating Club of RPI", url: absoluteUrl("/") },
+    organizer: { "@type": "Organization", name: "DCRGPI", url: absoluteUrl("/") },
   };
 
   return (
@@ -119,7 +119,7 @@ export default async function EventDetailPage({ params }: Params) {
                 />
               ) : (
                 <div className="flex h-full w-full items-center justify-center bg-ink-800 font-display text-3xl text-gold-400/30">
-                  Debating Club of RPI
+                  DCRGPI
                 </div>
               )}
             </div>

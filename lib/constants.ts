@@ -1,4 +1,5 @@
-export const SITE_NAME = "Debating Club of RPI";
+export const SITE_NAME = "DCRGPI";
+export const SITE_FULL_NAME = "Debating Club of Rangpur Government Polytechnic Institute";
 export const INSTITUTE_NAME = "Rangpur Government Polytechnic Institute";
 
 export const POST_CATEGORIES = [

@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Manrope } from "next/font/google";
 import { Toaster } from "sonner";
-import { SITE_NAME } from "@/lib/constants";
+import { SITE_FULL_NAME, SITE_NAME } from "@/lib/constants";
 import { absoluteUrl } from "@/lib/utils";
 import "./globals.css";
 
@@ -21,30 +21,38 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   metadataBase: new URL(absoluteUrl("/")),
   title: {
-    default: `${SITE_NAME} — Think Bold. Speak Fearlessly.`,
+    default: `${SITE_NAME} — ${SITE_FULL_NAME}`,
     template: `%s · ${SITE_NAME}`,
   },
-  description:
-    "The official website of the Debating Club of RPI — a community of thinkers, speakers and future leaders at Rangpur Government Polytechnic Institute.",
+  description: `The official website of ${SITE_FULL_NAME} (${SITE_NAME}) — a community of thinkers, speakers and future leaders at Rangpur Government Polytechnic Institute.`,
   keywords: [
-    "Debating Club of RPI",
+    SITE_NAME,
+    SITE_FULL_NAME,
+    "Debating Club of Rangpur Government Polytechnic Institute",
     "Rangpur Government Polytechnic Institute",
     "debate club",
     "Bangladesh debating",
     "public speaking",
   ],
+  applicationName: SITE_NAME,
+  authors: [{ name: SITE_FULL_NAME }],
+  creator: SITE_FULL_NAME,
+  publisher: SITE_FULL_NAME,
+  category: "education",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: absoluteUrl("/"),
     siteName: SITE_NAME,
     title: `${SITE_NAME} — Think Bold. Speak Fearlessly.`,
-    description: "A community of thinkers, speakers, and future leaders.",
+    description: `A community of thinkers, speakers, and future leaders at ${SITE_FULL_NAME}.`,
+    images: [{ url: "/logo.png", width: 800, height: 800, alt: `${SITE_NAME} logo` }],
   },
   twitter: {
     card: "summary_large_image",
     title: `${SITE_NAME} — Think Bold. Speak Fearlessly.`,
-    description: "A community of thinkers, speakers, and future leaders.",
+    description: `A community of thinkers, speakers, and future leaders at ${SITE_FULL_NAME}.`,
+    images: ["/logo.png"],
   },
   robots: { index: true, follow: true },
 };

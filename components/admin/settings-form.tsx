@@ -143,9 +143,16 @@ export function SettingsForm({ settings, demo }: { settings: SiteSettings; demo:
             </div>
           </FormSection>
 
-          <FormSection title="Hero section" description="The first thing visitors see. Keep the headline short and the image striking.">
+          <FormSection
+            title="Hero section"
+            description="The first thing visitors see. The group photo appears in a framed card beside the homepage headline."
+          >
             <div className="space-y-4">
-              <Field label="Hero image" error={errors.heroImage?.message}>
+              <Field
+                label="Hero group photo"
+                error={errors.heroImage?.message}
+                hint="Shown beside “Think Bold. Speak Fearlessly.” on the homepage and as the About page fallback. Upload a photo of the club members together."
+              >
                 <ImageUpload
                   value={watch("heroImage")}
                   onChange={(url) => setValue("heroImage", url, { shouldValidate: true })}
@@ -154,14 +161,18 @@ export function SettingsForm({ settings, demo }: { settings: SiteSettings; demo:
               </Field>
 
               <FormGrid>
-                <Field label="Image focal point" error={errors.heroImagePosition?.message}>
+                <Field label="Photo focal point" error={errors.heroImagePosition?.message}>
                   <Select {...register("heroImagePosition")}>
                     <option value="center">Center</option>
                     <option value="top">Top</option>
                     <option value="bottom">Bottom</option>
                   </Select>
                 </Field>
-                <Field label={`Overlay darkness — ${watch("heroOverlay")}%`} error={errors.heroOverlay?.message}>
+                <Field
+                  label={`Overlay darkness — ${watch("heroOverlay")}%`}
+                  error={errors.heroOverlay?.message}
+                  hint="Darkens the photo so the caption stays readable."
+                >
                   <input
                     type="range"
                     min={0}
@@ -448,7 +459,7 @@ export function SettingsForm({ settings, demo }: { settings: SiteSettings; demo:
           <FormSection title="Contact details" description="Shown on the contact page, footer and anywhere visitors need to reach the club.">
             <FormGrid>
               <Field label="Email address" error={errors.contactInfo?.email?.message}>
-                <Input type="email" placeholder="hello@dcrpi.club" {...register("contactInfo.email")} />
+                <Input type="email" placeholder="dcrgpi.info@gmail.com" {...register("contactInfo.email")} />
               </Field>
               <Field label="Phone number" error={errors.contactInfo?.phone?.message}>
                 <Input placeholder="+880 1712 345 678" {...register("contactInfo.phone")} />
@@ -492,7 +503,7 @@ export function SettingsForm({ settings, demo }: { settings: SiteSettings; demo:
                         next[index] = { ...link, url: event.target.value };
                         setValue("socialLinks", next, { shouldValidate: true });
                       }}
-                      placeholder="https://facebook.com/dcrpi"
+                      placeholder="https://facebook.com/dcrgpi"
                     />
                   </div>
                   <button
@@ -524,7 +535,7 @@ export function SettingsForm({ settings, demo }: { settings: SiteSettings; demo:
                 <Input placeholder="Rangpur Government Polytechnic Institute, Rangpur" {...register("instituteInfo")} />
               </Field>
               <Field label="Copyright line" error={errors.copyright?.message}>
-                <Input placeholder="Debating Club of RPI. All rights reserved." {...register("copyright")} />
+                <Input placeholder="DCRGPI. All rights reserved." {...register("copyright")} />
               </Field>
             </FormGrid>
           </div>

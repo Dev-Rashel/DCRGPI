@@ -1,5 +1,5 @@
 /**
- * Seeds the Debating Club of RPI database.
+ * Seeds the DCRGPI database.
  *
  * Usage:
  *   npm run seed            # create missing documents, keep existing content

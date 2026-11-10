@@ -2,7 +2,7 @@
   "name": "dcrpi",
   "version": "1.0.0",
   "private": true,
-  "description": "Official website and management system for the Debating Club of RPI",
+  "description": "Official website and management system for DCRGPI — Debating Club of Rangpur Government Polytechnic Institute",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

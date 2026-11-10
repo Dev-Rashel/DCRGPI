@@ -104,7 +104,7 @@ export function EventRegister({ event }: { event: EventDTO }) {
                 <Input placeholder="Your full name" {...register("name")} />
               </Field>
               <Field label="Student ID" error={errors.studentId?.message}>
-                <Input placeholder="RPI-2026-000" {...register("studentId")} />
+                <Input placeholder="RGPI-2026-000" {...register("studentId")} />
               </Field>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">

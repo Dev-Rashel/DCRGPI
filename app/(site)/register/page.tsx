@@ -7,7 +7,7 @@ import { Reveal } from "@/components/site/reveal";
 export const metadata: Metadata = {
   title: "Join the Club",
   description:
-    "Apply for membership of the Debating Club of RPI. Open to every student of Rangpur Government Polytechnic Institute.",
+    "Apply for membership of DCRGPI. Open to every student of Rangpur Government Polytechnic Institute.",
   alternates: { canonical: "/register" },
 };
 
@@ -15,32 +15,32 @@ const STEPS = [
   {
     icon: FileText,
     title: "Submit your application",
-    description: "Fill in the form with your details and tell us why you want to join.",
+    description: "ফর্মে আপনার তথ্য দিন এবং কেন যোগ দিতে চান তা আমাদের জানান।",
   },
   {
     icon: MessageCircle,
     title: "We get in touch",
-    description: "Our membership secretary reviews applications and contacts shortlisted students.",
+    description: "সদস্যপদ সম্পাদক আবেদনগুলো পর্যালোচনা করেন এবং বাছাই করা শিক্ষার্থীদের সঙ্গে যোগাযোগ করেন।",
   },
   {
     icon: Users,
     title: "Orientation session",
-    description: "Meet the committee and your mentor, and get your first taste of the Debate Lab.",
+    description: "কমিটি ও আপনার মেন্টরের সঙ্গে পরিচিত হোন এবং ডিবেট ল্যাবের স্বাদ নিন।",
   },
   {
     icon: CheckCircle2,
     title: "Welcome to the club",
-    description: "Attend weekly sessions, compete, and start building your debating record.",
+    description: "সাপ্তাহিক সেশনে অংশ নিন, প্রতিযোগিতায় নামুন এবং নিজের বিতর্কের রেকর্ড গড়া শুরু করুন।",
   },
 ];
 
 const BENEFITS = [
-  "Weekly training in parliamentary debate and public speaking",
-  "A personal mentor for your first month",
-  "Priority entry to club workshops and competitions",
-  "Certificates for participation and achievement",
-  "A community from every department of RPI",
-  "Access to our resource library and practice motions",
+  "পার্লামেন্টারি বিতর্ক ও পাবলিক স্পিকিংয়ে সাপ্তাহিক প্রশিক্ষণ",
+  "প্রথম মাসের জন্য একজন ব্যক্তিগত মেন্টর",
+  "ক্লাবের ওয়ার্কশপ ও প্রতিযোগিতায় অগ্রাধিকারপ্রাপ্ত প্রবেশ",
+  "অংশগ্রহণ ও অর্জনের সনদ",
+  "আরপিআইয়ের প্রতিটি বিভাগের শিক্ষার্থীদের কমিউনিটি",
+  "আমাদের রিসোর্স লাইব্রেরি ও প্র্যাকটিস মোশনের অ্যাক্সেস",
 ];
 
 export default function RegisterPage() {
@@ -53,13 +53,14 @@ export default function RegisterPage() {
             Find your voice. <span className="gold-text italic">Use it well.</span>
           </>
         }
-        description="Applications are open to every registered student of Rangpur Government Polytechnic Institute. No prior debating experience is required."
+        description="রংপুর সরকারি পলিটেকনিক ইনস্টিটিউটের প্রতিটি নিবন্ধিত শিক্ষার্থীর জন্য আবেদন উন্মুক্ত। আগের বিতর্ক অভিজ্ঞতার প্রয়োজন নেই।"
         breadcrumb={[{ label: "Join Us" }]}
+        showCta={false}
       />
 
       <section className="py-16 sm:py-20">
         <div className="container-narrow grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
-          <div className="space-y-8">
+          <div className="order-2 space-y-8 lg:order-1">
             <Reveal>
               <div className="rounded-2xl border border-gold-400/20 bg-gold-400/[0.05] p-6">
                 <div className="flex items-center gap-2 text-gold-300">
@@ -68,7 +69,7 @@ export default function RegisterPage() {
                 </div>
                 <p className="mt-3 font-display text-2xl text-cream">2026 intake is now accepting applications</p>
                 <p className="mt-2 text-sm leading-relaxed text-cream/55">
-                  Rolling admissions until the end of the session. Early applicants get priority for orientation.
+                  সেশন শেষ পর্যন্ত চলমান ভর্তি। আগে আবেদনকারীরা ওরিয়েন্টেশনে অগ্রাধিকার পাবেন।
                 </p>
               </div>
             </Reveal>
@@ -92,8 +93,8 @@ export default function RegisterPage() {
                   <p className="text-[0.65rem] font-semibold uppercase tracking-[0.18em]">Your data is safe</p>
                 </div>
                 <p className="mt-3 text-sm leading-relaxed text-cream/55">
-                  Your information is stored securely and used only for membership processing. We never share your
-                  details with third parties.
+                  আপনার তথ্য নিরাপদে সংরক্ষণ করা হয় এবং শুধু সদস্যপদ প্রক্রিয়াকরণের জন্য ব্যবহার করা হয়। আমরা কখনো
+                  তৃতীয় পক্ষের সঙ্গে আপনার তথ্য শেয়ার করি না।
                 </p>
               </div>
             </Reveal>
@@ -121,7 +122,7 @@ export default function RegisterPage() {
             </Reveal>
           </div>
 
-          <Reveal delay={0.1}>
+          <Reveal delay={0.1} className="order-first lg:order-2">
             <MembershipForm />
           </Reveal>
         </div>

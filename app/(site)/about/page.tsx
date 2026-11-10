@@ -12,7 +12,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "About the Club",
   description:
-    "Learn about the Debating Club of RPI — our history, mission, values, debate formats and training opportunities.",
+    "Learn about DCRGPI — our history, mission, values, debate formats and training opportunities.",
   alternates: { canonical: "/about" },
 };
 
@@ -21,44 +21,44 @@ const FORMATS = [
     name: "British Parliamentary",
     icon: Scale,
     description:
-      "Four teams, two benches, one motion. Fast, strategic and the standard format for university-level competition.",
+      "চার দল, দুটি বেঞ্চ, একটি মোশন। দ্রুত, কৌশলী এবং বিশ্ববিদ্যালয় পর্যায়ের প্রতিযোগিতার আদর্শ ফরম্যাট।",
   },
   {
     name: "Asian Parliamentary",
     icon: Users,
     description:
-      "Three-on-three with substantive speeches and rigorous cross-examination — the backbone of our weekly practice.",
+      "তিন বনাম তিন — বিষয়ভিত্তিক বক্তব্য ও কঠোর ক্রস-এক্সামিনেশনসহ। আমাদের সাপ্তাহিক প্র্যাকটিসের মূল ভিত্তি।",
   },
   {
     name: "Public Speaking",
     icon: Mic2,
     description:
-      "Prepared and impromptu speeches that build stage presence, structure and the confidence to command a room.",
+      "প্রস্তুত ও তাৎক্ষণিক বক্তব্যের মাধ্যমে মঞ্চে উপস্থিতি, গঠন এবং গোটা হলকে মুগ্ধ করার আত্মবিশ্বাস গড়ে তোলা।",
   },
   {
     name: "World Schools",
     icon: GraduationCap,
     description:
-      "A school-level format that teaches clarity, rhetoric and principled argument — perfect for newer debaters.",
+      "স্কুল পর্যায়ের এই ফরম্যাটে স্পষ্টতা, বাগ্মিতা ও নীতিনিষ্ঠ যুক্তি শেখানো হয় — নতুন বিতার্কিকদের জন্য উপযুক্ত।",
   },
 ];
 
 const TRAINING = [
   {
     title: "Weekly Debate Lab",
-    description: "Every Thursday: motion analysis, practice rounds and peer feedback in a low-pressure setting.",
+    description: "প্রতি বৃহস্পতিবার: মোশন বিশ্লেষণ, প্র্যাকটিস রাউন্ড এবং চাপমুক্ত পরিবেশে সহপাঠীদের মতামত।",
   },
   {
     title: "Mentorship pairing",
-    description: "Every new member is paired with a senior debater for their first month of training and competition.",
+    description: "প্রতিটি নতুন সদস্যকে প্রথম মাসের প্রশিক্ষণ ও প্রতিযোগিতার জন্য একজন সিনিয়র বিতার্কিকের সঙ্গে জোড়া করা হয়।",
   },
   {
     title: "Adjudication workshops",
-    description: "Learn to judge debates with consistency and empathy — a skill that sharpens your own arguments.",
+    description: "ধারাবাহিকতা ও সহানুভূতির সঙ্গে বিতর্ক বিচার করা শিখুন — এই দক্ষতা আপনার নিজের যুক্তকেও ধার দেয়।",
   },
   {
     title: "Tournament prep squads",
-    description: "Focused preparation camps before regional and national competitions, with dedicated coaches.",
+    description: "আঞ্চলিক ও জাতীয় প্রতিযোগিতার আগে নির্দিষ্ট কোচের তত্ত্বাবধানে নিবিড় প্রস্তুতি ক্যাম্প।",
   },
 ];
 
@@ -102,7 +102,7 @@ export default async function AboutPage() {
                   {heroImage ? (
                     <Image
                       src={heroImage}
-                      alt="Debating Club of RPI members"
+                      alt="DCRGPI members"
                       fill
                       sizes="(max-width: 1024px) 100vw, 45vw"
                       className="object-cover"
@@ -116,7 +116,7 @@ export default async function AboutPage() {
                       Rangpur Government Polytechnic Institute
                     </p>
                     <p className="mt-2 font-display text-2xl text-cream">
-                      {team[0]?.name ?? "The Debating Club of RPI"}
+                      {team[0]?.name ?? "DCRGPI"}
                     </p>
                     <p className="text-sm text-cream/50">Club leadership</p>
                   </div>
@@ -160,7 +160,7 @@ export default async function AboutPage() {
       <section className="py-20 sm:py-24">
         <div className="container-narrow grid gap-14 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal>
-            <SectionHeading eyebrow="What drives us" title="Our objectives" description="Five commitments that shape every session, event and decision we make." />
+            <SectionHeading eyebrow="What drives us" title="Our objectives" description="পাঁচটি অঙ্গীকার, যা আমাদের প্রতিটি সেশন, ইভেন্ট ও সিদ্ধান্তকে গড়ে তোলে।" />
             <Link
               href="/register"
               className="mt-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-gold-300 hover:text-gold-200"
@@ -193,7 +193,7 @@ export default async function AboutPage() {
                   The rules we <span className="gold-text italic">live by</span>
                 </>
               }
-              description="Debate is a sport of ideas. These values keep it honest, human and worth showing up for."
+              description="বিতর্ক আইডিয়ার একটি খেলা। এই মূল্যবোধই এটিকে সৎ, মানবিক ও উপস্থিত থাকার মতো করে রাখে।"
               align="center"
             />
           </Reveal>
@@ -219,7 +219,7 @@ export default async function AboutPage() {
             <SectionHeading
               eyebrow="How we debate"
               title="Formats we train in"
-              description="From your first impromptu speech to national-circuit finals, our training covers the formats that matter."
+              description="প্রথম তাৎক্ষণিক বক্তব্য থেকে জাতীয় সার্কিটের ফাইনাল — আমাদের প্রশিক্ষণে গুরুত্বপূর্ণ সব ফরম্যাটই অন্তর্ভুক্ত।"
             />
           </Reveal>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -245,8 +245,8 @@ export default async function AboutPage() {
               <span className="gold-text italic">not just the tricks.</span>
             </h2>
             <p className="mt-5 text-base leading-relaxed text-cream/60">
-              Structured, beginner-friendly training is at the heart of the club. You do not need experience, a
-              perfect accent, or a natural gift for speaking — you need to show up.
+              ক্লাবের প্রাণ হলো সুশৃঙ্খল ও নতুনদের উপযোগী প্রশিক্ষণ। আপনার অভিজ্ঞতা, নিখুঁত উচ্চারণ বা জন্মগত
+              বক্তৃতার প্রতিভা লাগবে না — শুধু নিয়মিত উপস্থিত থাকতে হবে।
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link

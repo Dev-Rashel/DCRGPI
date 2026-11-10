@@ -57,7 +57,7 @@ export default async function PostDetailPage({ params }: Params) {
     datePublished: post.publishedAt,
     dateModified: post.updatedAt,
     author: { "@type": "Organization", name: post.authorName },
-    publisher: { "@type": "Organization", name: "Debating Club of RPI" },
+    publisher: { "@type": "Organization", name: "DCRGPI" },
     image: post.coverImage || undefined,
     description: post.excerpt,
   };
@@ -141,7 +141,7 @@ export default async function PostDetailPage({ params }: Params) {
                 <p className="text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-gold-300">Written by</p>
                 <p className="mt-3 font-display text-xl text-cream">{post.authorName}</p>
                 <p className="mt-2 text-sm leading-relaxed text-cream/50">
-                  Publishing on behalf of the Debating Club of RPI.
+                  Publishing on behalf of DCRGPI.
                 </p>
               </div>
               <div className="surface p-6">
@@ -154,7 +154,7 @@ export default async function PostDetailPage({ params }: Params) {
               <div className="surface p-6">
                 <p className="text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-gold-300">Join us</p>
                 <p className="mt-3 text-sm leading-relaxed text-cream/60">
-                  Applications are open to every RPI student, from every department.
+                  Applications are open to every RGPI student, from every department.
                 </p>
                 <Link
                   href="/register"

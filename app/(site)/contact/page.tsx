@@ -12,7 +12,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with the Debating Club of RPI — membership questions, collaborations, events and more.",
+    "Get in touch with DCRGPI — membership questions, collaborations, events and more.",
   alternates: { canonical: "/contact" },
 };
 
@@ -49,7 +49,7 @@ export default async function ContactPage() {
             Let&apos;s start a <span className="gold-text italic">conversation</span>
           </>
         }
-        description="Whether you want to join, collaborate, invite us to a tournament or simply say hello — our inbox is always open."
+        description="আপনি যোগ দিতে চান, সহযোগিতা করতে চান, টুর্নামেন্টে আমন্ত্রণ জানাতে চান নাকি শুধু হ্যালো বলতে চান — আমাদের ইনবক্স সবসময় খোলা।"
         breadcrumb={[{ label: "Contact" }]}
       />
 
@@ -59,7 +59,7 @@ export default async function ContactPage() {
             <Reveal>
               <h2 className="font-display text-2xl font-semibold text-cream sm:text-3xl">Reach the club</h2>
               <p className="mt-3 text-sm leading-relaxed text-cream/55">
-                We usually respond within two working days. For urgent event-day matters, please call the number below.
+                সাধারণত দুই কর্মদিবসের মধ্যে আমরা উত্তর দিই। ইভেন্টের দিন জরুরি কোনো বিষয়ে হলে নিচের নম্বরে কল করুন।
               </p>
             </Reveal>
 
@@ -99,11 +99,11 @@ export default async function ContactPage() {
                   <p className="text-[0.6rem] font-semibold uppercase tracking-[0.18em]">Club hours</p>
                 </div>
                 <p className="mt-2 text-sm text-cream/60">
-                  Weekly Debate Lab · Thursdays, 4:00 PM
+                  Weekly Debate Lab · Thursday, 4:00 PM
                   <br />
-                  Committee meetings · Sundays, 11:00 AM
+                  Committee meetings · Sunday, 11:00 AM
                 </p>
-                <p className="mt-3 text-xs text-cream/35">Academic building, Room 302 (during term time)</p>
+                <p className="mt-3 text-xs text-cream/35">Academic building, Room 302 (during class hours)</p>
               </div>
             </Reveal>
 
@@ -130,7 +130,7 @@ export default async function ContactPage() {
               <div className="rounded-2xl border border-gold-400/20 bg-gold-400/[0.05] p-6">
                 <p className="font-display text-xl text-cream">Want to join instead?</p>
                 <p className="mt-2 text-sm text-cream/55">
-                  Skip the inbox — apply for membership directly and we&apos;ll be in touch.
+                  ইনবক্সের অপেক্ষা বাদ দিন — সরাসরি সদস্যপদের জন্য আবেদন করুন, আমরা যোগাযোগ করব।
                 </p>
                 <Link
                   href="/register"

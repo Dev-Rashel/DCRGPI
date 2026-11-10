@@ -100,7 +100,9 @@ export function MembershipManager({ initialItems, demo }: { initialItems: Member
               </td>
               <td className="px-4 py-3.5 text-xs text-cream/50">
                 {application.department}
-                <span className="block text-[0.65rem] text-cream/30">{application.semester} semester</span>
+                <span className="block text-[0.65rem] text-cream/30">
+                  {application.semester} semester{application.group ? ` · Group ${application.group}` : ""}
+                </span>
               </td>
               <td className="px-4 py-3.5 text-xs text-cream/50">
                 <a href={`mailto:${application.email}`} className="block truncate hover:text-gold-200">
@@ -239,6 +241,7 @@ function MembershipReview({
         <StatusBadge status={status} />
         <Badge variant="outline">{application.department}</Badge>
         <Badge variant="outline">{application.semester} semester</Badge>
+        {application.group && <Badge variant="outline">Group {application.group}</Badge>}
       </div>
 
       <div className="grid gap-3 sm:grid-cols-2">
@@ -246,6 +249,10 @@ function MembershipReview({
         <Info label="Phone" value={application.phone} icon={<Phone className="h-3.5 w-3.5" />} href={`tel:${application.phone}`} />
         <Info label="Email" value={application.email} icon={<Mail className="h-3.5 w-3.5" />} href={`mailto:${application.email}`} />
         <Info label="Reviewed" value={application.reviewedAt ? formatDate(application.reviewedAt) : "Not yet reviewed"} />
+        <Info label="Father's name" value={application.fatherName || "Not provided"} />
+        <Info label="Mother's name" value={application.motherName || "Not provided"} />
+        <Info label="Previous debate experience" value={application.hasDebateExperience === "yes" ? "Yes" : "No"} />
+        <Info label="Can give regular time" value={application.canCommitTime === "yes" ? "Yes" : "No"} />
       </div>
 
       <ReviewText title="Motivation" text={application.motivation || "Not provided"} />

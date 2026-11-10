@@ -43,7 +43,7 @@ export function LoginForm() {
         setServerError(payload.error ?? "Unable to sign in.");
         return;
       }
-      toast.success(`Welcome back, ${payload.data.name}`);
+      toast.success(`Welcome, ${payload.data.name}`);
       const next = searchParams.get("next");
       router.push(next && next.startsWith("/admin") ? next : "/admin");
       router.refresh();
@@ -56,7 +56,7 @@ export function LoginForm() {
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
       <div className="space-y-1.5">
         <Label>Email address</Label>
-        <Input type="email" autoComplete="username" placeholder="admin@dcrpi.club" {...register("email")} />
+        <Input type="email" autoComplete="username" placeholder="dcrgpi.info@gmail.com" autoFocus {...register("email")} />
         {errors.email && <p className="text-[0.7rem] text-red-300">{errors.email.message}</p>}
       </div>
       <div className="space-y-1.5">
@@ -87,7 +87,7 @@ export function LoginForm() {
         </p>
       )}
 
-      <Button type="submit" disabled={isSubmitting} className="w-full">
+      <Button type="submit" size="lg" disabled={isSubmitting} className="w-full">
         {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : <LogIn className="h-4 w-4" />}
         {isSubmitting ? "Signing in…" : "Sign in to dashboard"}
       </Button>

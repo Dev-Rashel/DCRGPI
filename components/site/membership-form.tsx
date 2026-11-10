@@ -20,7 +20,7 @@ const ACTIVITY_OPTIONS = [
   "Public speaking",
   "Adjudication",
   "Research & writing",
-  "Event organizing",
+  "Event organising",
 ];
 
 export function MembershipForm() {
@@ -33,6 +33,7 @@ export function MembershipForm() {
     handleSubmit,
     reset,
     setValue,
+    watch,
     formState: { errors, isSubmitting },
   } = useForm<FormValues>({
     resolver: zodResolver(membershipSchema),
@@ -41,14 +42,21 @@ export function MembershipForm() {
       studentId: "",
       department: "",
       semester: "",
+      group: "",
       email: "",
       phone: "",
       photo: "",
+      fatherName: "",
+      motherName: "",
+      hasDebateExperience: "",
+      canCommitTime: "",
       experience: "",
       motivation: "",
       activities: "",
     },
   });
+
+  const hasDebateExperience = watch("hasDebateExperience");
 
   const toggleActivity = (activity: string) => {
     const next = activities.includes(activity)
@@ -68,16 +76,16 @@ export function MembershipForm() {
       });
       const payload = await response.json();
       if (!response.ok) {
-        setServerError(payload.error ?? "Your application could not be submitted. Please try again.");
+        setServerError(payload.error ?? "আপনার আবেদন জমা দেওয়া যায়নি। আবার চেষ্টা করুন।");
         return;
       }
       setReference(payload.data.referenceNo);
-      toast.success("Application submitted successfully");
+      toast.success("আবেদন সফলভাবে জমা হয়েছে");
       reset();
       setActivities([]);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch {
-      setServerError("Network error. Please check your connection and try again.");
+      setServerError("নেটওয়ার্ক সমস্যা হয়েছে। আপনার ইন্টারনেট সংযোগ পরীক্ষা করে আবার চেষ্টা করুন।");
     }
   };
 
@@ -94,8 +102,8 @@ export function MembershipForm() {
           </p>
           <h2 className="mt-3 font-display text-3xl font-semibold text-cream">Welcome to the conversation.</h2>
           <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-cream/60">
-            Your membership application has been submitted. Our membership secretary will review it and contact you
-            using the details you provided. Please keep your reference number safe.
+            আপনার সদস্যপদের আবেদন জমা হয়েছে। আমাদের সদস্যপদ সম্পাদক এটি পর্যালোচনা করবেন এবং আপনার দেওয়া তথ্য
+            ব্যবহার করে যোগাযোগ করবেন। অনুগ্রহ করে আপনার রেফারেন্স নম্বরটি সংরক্ষণ করুন।
           </p>
           <div className="mx-auto mt-7 max-w-sm rounded-xl border border-gold-400/25 bg-gold-400/[0.07] px-5 py-4">
             <p className="text-[0.6rem] uppercase tracking-[0.18em] text-gold-300">Your reference number</p>
@@ -106,7 +114,7 @@ export function MembershipForm() {
               href="/"
               className="inline-flex h-11 items-center gap-2 rounded-full border border-white/15 px-6 text-sm font-semibold text-cream transition hover:border-gold-400/50"
             >
-              Back home
+              Back to home
             </Link>
             <Link
               href="/events"
@@ -129,7 +137,7 @@ export function MembershipForm() {
         <div>
           <h2 className="font-display text-2xl font-semibold text-cream">Membership application</h2>
           <p className="mt-1 text-sm text-cream/50">
-            Takes about three minutes. All fields marked required must be completed.
+            প্রায় তিন মিনিট লাগবে। * চিহ্নিত সব ঘর পূরণ করা আবশ্যক।
           </p>
         </div>
       </div>
@@ -143,7 +151,7 @@ export function MembershipForm() {
             <Input autoComplete="name" placeholder="e.g. Md. Tanvir Hasan" {...register("name")} />
           </Field>
           <Field label="Student ID *" error={errors.studentId?.message}>
-            <Input placeholder="e.g. RPI-2026-114" {...register("studentId")} />
+            <Input placeholder="e.g. RGPI-2026-114" {...register("studentId")} />
           </Field>
           <Field label="Department *" error={errors.department?.message}>
             <select className="input-base" {...register("department")}>
@@ -160,18 +168,27 @@ export function MembershipForm() {
               <option value="">Select semester</option>
               {SEMESTERS.map((semester) => (
                 <option key={semester} value={semester}>
-                  {semester} semester
+                  Semester {semester}
                 </option>
               ))}
             </select>
           </Field>
-          <Field label="Email address *" error={errors.email?.message}>
-            <Input type="email" autoComplete="email" placeholder="you@example.com" {...register("email")} />
+          <Field label="Group *" error={errors.group?.message}>
+            <Input placeholder="e.g. A" {...register("group")} />
           </Field>
           <Field label="Phone number *" error={errors.phone?.message}>
             <Input type="tel" autoComplete="tel" placeholder="017XXXXXXXX" {...register("phone")} />
           </Field>
-          <Field label="Profile photo URL (optional)" error={errors.photo?.message} className="sm:col-span-2">
+          <Field label="Email address *" error={errors.email?.message} className="sm:col-span-2">
+            <Input type="email" autoComplete="email" placeholder="you@example.com" {...register("email")} />
+          </Field>
+          <Field label="Father's name *" error={errors.fatherName?.message}>
+            <Input placeholder="Father's full name" {...register("fatherName")} />
+          </Field>
+          <Field label="Mother's name *" error={errors.motherName?.message}>
+            <Input placeholder="Mother's full name" {...register("motherName")} />
+          </Field>
+          <Field label="Profile photo link (optional)" error={errors.photo?.message} className="sm:col-span-2">
             <Input placeholder="https://res.cloudinary.com/…" {...register("photo")} />
           </Field>
         </div>
@@ -183,17 +200,35 @@ export function MembershipForm() {
         <legend className="mb-4 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-gold-300">
           02 — Your debating journey
         </legend>
-        <Field label="Previous debate experience (optional)" error={errors.experience?.message}>
-          <textarea
-            className="input-base min-h-[90px] py-3"
-            placeholder="School competitions, public speaking, MUN, or none at all — all are welcome."
-            {...register("experience")}
-          />
-        </Field>
-        <Field label="Why do you want to join the club? *" error={errors.motivation?.message}>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Field label="Have you debated before? *" error={errors.hasDebateExperience?.message}>
+            <select className="input-base" {...register("hasDebateExperience")}>
+              <option value="">Select an answer</option>
+              <option value="yes">Yes, I have debated before</option>
+              <option value="no">No, I am new to debate</option>
+            </select>
+          </Field>
+          <Field label="Can you commit time to the club? *" error={errors.canCommitTime?.message}>
+            <select className="input-base" {...register("canCommitTime")}>
+              <option value="">Select an answer</option>
+              <option value="yes">Yes, I can attend regularly</option>
+              <option value="no">No, my schedule is limited</option>
+            </select>
+          </Field>
+        </div>
+        {hasDebateExperience === "yes" && (
+          <Field label="Tell us about your experience (optional)" error={errors.experience?.message}>
+            <textarea
+              className="input-base min-h-[90px] py-3"
+              placeholder="School competitions, public speaking, MUN, club debates…"
+              {...register("experience")}
+            />
+          </Field>
+        )}
+        <Field label="Why do you want to join? *" error={errors.motivation?.message}>
           <textarea
             className="input-base min-h-[130px] py-3"
-            placeholder="Tell us what draws you to debating and what you hope to gain."
+            placeholder="বিতর্কে আপনাকে কী টানে এবং আপনি কী অর্জন করতে চান তা লিখুন।"
             {...register("motivation")}
           />
         </Field>
@@ -230,7 +265,7 @@ export function MembershipForm() {
 
       <div className="mt-7 flex flex-col gap-3 border-t border-white/[0.08] pt-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="max-w-xs text-[0.68rem] leading-relaxed text-cream/35">
-          By submitting you confirm the information is accurate and agree to the club&apos;s code of conduct.
+          জমা দেওয়ার মাধ্যমে আপনি নিশ্চিত করছেন যে তথ্যগুলো সঠিক এবং ক্লাবের আচরণবিধিতে সম্মত আছেন।
         </p>
         <Button type="submit" size="lg" disabled={isSubmitting} className="shrink-0">
           {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : null}

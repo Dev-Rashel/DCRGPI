@@ -15,7 +15,7 @@ const urlOrEmpty = z
   .trim()
   .max(500)
   .refine((value) => value === "" || /^(?:https?:\/\/|\/)[^\s]+$/i.test(value), {
-    message: "Enter a valid http(s) URL or a site path such as /logo.svg",
+    message: "Enter a valid http(s) URL or a site path such as /logo.png",
   });
 
 const dateString = z.string().min(1, "Date is required");
@@ -71,6 +71,10 @@ export const eventSchema = eventBaseSchema.refine((data) => new Date(data.endDat
 
 export const eventUpdateSchema = eventBaseSchema.partial();
 
+const isValidYesNo = (value: string): boolean => value === "yes" || value === "no";
+
+const yesNoField = (message: string) => z.string().trim().refine(isValidYesNo, message);
+
 export const membershipSchema = z.object({
   name: z.string().trim().min(3, "Full name is required").max(120),
   studentId: z
@@ -81,12 +85,17 @@ export const membershipSchema = z.object({
     .regex(/^[A-Za-z0-9-]+$/, "Student ID may contain letters, numbers and hyphens only"),
   department: z.string().trim().min(2, "Select a department").max(80),
   semester: z.string().trim().min(1, "Select a semester").max(20),
+  group: z.string().trim().min(1, "Group is required").max(40),
   email: z.string().trim().email("Enter a valid email"),
   phone: z
     .string()
     .trim()
     .regex(/^(?:\+?880|0)1[3-9]\d{8}$/, "Enter a valid Bangladeshi phone number"),
   photo: urlOrEmpty.optional().default(""),
+  fatherName: z.string().trim().min(3, "Father's name is required").max(120),
+  motherName: z.string().trim().min(3, "Mother's name is required").max(120),
+  hasDebateExperience: yesNoField("Tell us whether you have debate experience"),
+  canCommitTime: yesNoField("Tell us whether you can commit regular time"),
   experience: z.string().trim().max(2000).optional().default(""),
   motivation: z.string().trim().min(20, "Please tell us at least a sentence or two").max(2000),
   activities: z.string().trim().max(500).optional().default(""),

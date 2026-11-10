@@ -42,7 +42,7 @@ export default async function AdminDashboardPage() {
     <div>
       <AdminPageHeader
         title="Club overview"
-        description={`Welcome back. Here is what is happening with ${settings.footerTagline ? "the club" : "DCRPI"} right now.`}
+        description={`Welcome back. Here is what is happening with ${settings.footerTagline ? "the club" : "DCRGPI"} right now.`}
         actions={
           <>
             <AdminButton href="/admin/posts/new" variant="primary">

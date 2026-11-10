@@ -177,7 +177,7 @@ export function EventForm({ event, demo = false }: { event?: EventDTO; demo?: bo
                   </Select>
                 </Field>
                 <Field label="Venue" htmlFor="venue" error={errors.venue?.message} required>
-                  <Input id="venue" placeholder="e.g. RPI Auditorium" {...register("venue")} />
+                  <Input id="venue" placeholder="e.g. RGPI Auditorium" {...register("venue")} />
                 </Field>
                 <Field label="Starts" htmlFor="startDate" error={errors.startDate?.message} required>
                   <Input id="startDate" type="datetime-local" {...register("startDate")} />

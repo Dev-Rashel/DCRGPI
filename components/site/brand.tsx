@@ -5,14 +5,18 @@ import type { SiteSettings } from "@/lib/types";
 export function Logo({ settings, size = "md" }: { settings: SiteSettings; size?: "sm" | "md" | "lg" }) {
   const dimensions = size === "lg" ? "h-14 w-14" : size === "sm" ? "h-9 w-9" : "h-11 w-11";
   return (
-    <span className={`relative flex ${dimensions} shrink-0 items-center justify-center overflow-hidden rounded-xl border border-gold-400/30 bg-ink-800`}>
+    <span
+      className={`relative flex ${dimensions} shrink-0 items-center justify-center overflow-hidden rounded-xl border border-gold-400/30 ${
+        settings.logo ? "bg-white" : "bg-ink-800"
+      }`}
+    >
       {settings.logo ? (
         <Image
           src={settings.logo}
-          alt="Debating Club of RPI logo"
+          alt="DCRGPI logo"
           fill
           sizes="56px"
-          className="object-contain p-1"
+          className="object-contain p-0.5"
           unoptimized={settings.logo.endsWith(".svg")}
         />
       ) : (

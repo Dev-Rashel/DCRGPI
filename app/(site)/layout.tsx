@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/site/navbar";
 import { Footer } from "@/components/site/footer";
+import { ScrollProgress } from "@/components/site/scroll-progress";
 import { getSettings } from "@/lib/data";
 import { accentPalette } from "@/lib/utils";
 
@@ -18,6 +19,7 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
       className="relative flex min-h-screen flex-col"
       style={accentPalette(settings.themeAccent) as React.CSSProperties}
     >
+      <ScrollProgress />
       <Navbar settings={settings} />
       <main id="main-content" className="flex-1">
         {children}

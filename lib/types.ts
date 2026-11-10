@@ -127,6 +127,8 @@ export interface TeamMemberDTO {
   isActive: boolean;
 }
 
+export type YesNo = "yes" | "no";
+
 export interface MembershipDTO {
   id: string;
   referenceNo: string;
@@ -134,9 +136,14 @@ export interface MembershipDTO {
   studentId: string;
   department: string;
   semester: string;
+  group: string;
   email: string;
   phone: string;
   photo: string;
+  fatherName: string;
+  motherName: string;
+  hasDebateExperience: YesNo;
+  canCommitTime: YesNo;
   experience: string;
   motivation: string;
   activities: string;

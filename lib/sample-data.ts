@@ -13,8 +13,8 @@ const img = (id: string, w = 1200) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
 
 export const DEFAULT_SETTINGS: SiteSettings = {
-  logo: "",
-  heroImage: img("photo-1475721027785-f74eccf877e2", 2000),
+  logo: "/logo.png",
+  heroImage: img("photo-1529156069898-49953e39b3ac", 1600),
   heroImagePosition: "center",
   heroOverlay: 72,
   heroEyebrow: "Rangpur Government Polytechnic Institute",
@@ -26,11 +26,11 @@ export const DEFAULT_SETTINGS: SiteSettings = {
   heroSecondaryCtaText: "Explore Events",
   heroSecondaryCtaHref: "/events",
   aboutContent:
-    "<p>The Debating Club of RPI is the official debating society of Rangpur Government Polytechnic Institute. Founded by a group of students who believed that every voice deserves a stage, the club has grown into one of the most active student communities on campus.</p><p>We train students in argumentation, public speaking, critical thinking and leadership. Through weekly practice sessions, workshops and inter-polytechnic competitions, our members learn to reason clearly, listen generously and speak with conviction.</p>",
+    "<p>The Debating Club of Rangpur Government Polytechnic Institute (DCRGPI) is the official debating society of the institute. Founded by a group of students who believed that every voice deserves a stage, the club has grown into one of the most active student communities on campus.</p><p>We train students in argumentation, public speaking, critical thinking and leadership. Through weekly practice sessions, workshops and inter-polytechnic competitions, our members learn to reason clearly, listen generously and speak with conviction.</p>",
   history:
-    "What began in 2019 as a handful of students debating in an empty classroom is today a thriving society with members from every department of the institute. The club has represented RPI in national debating circuits and continues to build a culture of fearless, evidence-led conversation.",
+    "What began in 2019 as a handful of students debating in an empty classroom is today a thriving society with members from every department of the institute. The club has represented RGPI in national debating circuits and continues to build a culture of fearless, evidence-led conversation.",
   mission:
-    "To build a generation of articulate, ethical and critical thinkers who can represent RPI on any stage and contribute meaningfully to public discourse.",
+    "To build a generation of articulate, ethical and critical thinkers who can represent RGPI on any stage and contribute meaningfully to public discourse.",
   vision:
     "To be the most respected student debating society in the Rangpur region — a launchpad for speakers, leaders and changemakers.",
   objectives: [
@@ -50,9 +50,9 @@ export const DEFAULT_SETTINGS: SiteSettings = {
   footerText:
     "The official debating society of Rangpur Government Polytechnic Institute, building confident speakers and critical thinkers since 2019.",
   instituteInfo: "Rangpur Government Polytechnic Institute, Rangpur, Bangladesh",
-  copyright: "Debating Club of RPI. All rights reserved.",
+  copyright: "DCRGPI. All rights reserved.",
   contactInfo: {
-    email: "hello@dcrpi.club",
+    email: "dcrgpi.info@gmail.com",
     phone: "+880 1712 345 678",
     address: "Rangpur Government Polytechnic Institute, College Road, Rangpur 5400, Bangladesh",
     mapUrl: "https://maps.google.com/?q=Rangpur+Government+Polytechnic+Institute",
@@ -97,14 +97,14 @@ const daysAhead = (n: number) => new Date(now.getTime() + n * 86_400_000).toISOS
 export const SAMPLE_POSTS: PostDTO[] = [
   {
     id: "demo-post-1",
-    title: "RPI Debaters Reach the Semi-Finals of the North Bengal Championship",
+    title: "RGPI Debaters Reach the Semi-Finals of the North Bengal Championship",
     slug: "rpi-debaters-semi-finals-north-bengal",
     category: "Achievements",
     coverImage: img("photo-1524178232363-1fb2b075b655"),
     excerpt:
       "Our senior team delivered four consecutive winning rounds before bowing out in a tightly contested semi-final against Rajshahi Polytechnic.",
     content:
-      "<p>It was a weekend that will be remembered for a long time. The Debating Club of RPI sent two teams to the North Bengal Inter-Polytechnic Debating Championship, and both returned with their heads held high.</p><h2>A strong start</h2><p>Our senior team opened the tournament with a dominant performance on the motion <em>“This house believes that social media has done more harm than good.”</em> Their command of evidence and calm cross-examination set the tone for the entire competition.</p><blockquote>Preparation is the price of confidence. Our members put in weeks of practice and it showed on the floor.</blockquote><p>Both teams advanced to the quarter-finals, with the senior team eventually reaching the semi-finals. Congratulations to every debater, researcher and supporter who made the journey.</p>",
+      "<p>It was a weekend that will be remembered for a long time. DCRGPI sent two teams to the North Bengal Inter-Polytechnic Debating Championship, and both returned with their heads held high.</p><h2>A strong start</h2><p>Our senior team opened the tournament with a dominant performance on the motion <em>“This house believes that social media has done more harm than good.”</em> Their command of evidence and calm cross-examination set the tone for the entire competition.</p><blockquote>Preparation is the price of confidence. Our members put in weeks of practice and it showed on the floor.</blockquote><p>Both teams advanced to the quarter-finals, with the senior team eventually reaching the semi-finals. Congratulations to every debater, researcher and supporter who made the journey.</p>",
     authorName: "Club Media Desk",
     status: "published",
     isFeatured: true,
@@ -138,7 +138,7 @@ export const SAMPLE_POSTS: PostDTO[] = [
     excerpt:
       "Students from every department and semester are invited to apply. No prior debating experience is required — only curiosity and commitment.",
     content:
-      "<p>The Debating Club of RPI is now accepting membership applications for the 2026 academic session. We are looking for curious, committed students who want to speak with clarity and think with rigour.</p><h2>Who can apply?</h2><p>Any registered student of Rangpur Government Polytechnic Institute may apply. First-semester students are especially encouraged.</p><h2>What you get</h2><ul><li>Weekly training sessions with experienced debaters.</li><li>Priority registration for club competitions.</li><li>Mentorship, certificates and a community that has your back.</li></ul><p>Applications close on the last day of the month. Apply through the registration page.</p>",
+      "<p>DCRGPI is now accepting membership applications for the 2026 academic session. We are looking for curious, committed students who want to speak with clarity and think with rigour.</p><h2>Who can apply?</h2><p>Any registered student of Rangpur Government Polytechnic Institute may apply. First-semester students are especially encouraged.</p><h2>What you get</h2><ul><li>Weekly training sessions with experienced debaters.</li><li>Priority registration for club competitions.</li><li>Mentorship, certificates and a community that has your back.</li></ul><p>Applications close on the last day of the month. Apply through the registration page.</p>",
     authorName: "General Secretary",
     status: "published",
     isFeatured: false,
@@ -182,14 +182,14 @@ export const SAMPLE_POSTS: PostDTO[] = [
   },
   {
     id: "demo-post-6",
-    title: "Announcing the RPI Open Debate Tournament 2026",
+    title: "Announcing the RGPI Open Debate Tournament 2026",
     slug: "rpi-open-debate-tournament-2026",
     category: "Competition Updates",
     coverImage: img("photo-1523580494863-6f3031224c94"),
     excerpt:
-      "Save the date: teams from polytechnics across the north will gather at RPI for a full day of competitive debating.",
+      "Save the date: teams from polytechnics across the north will gather at RGPI for a full day of competitive debating.",
     content:
-      "<p>Mark your calendars. The RPI Open Debate Tournament returns this season with a bigger draw, a stronger judging panel and a prize pool worthy of the region's best speakers.</p><p>Registration details and the official call for adjudicators will be published soon. Follow our social channels for updates.</p>",
+      "<p>Mark your calendars. The RGPI Open Debate Tournament returns this season with a bigger draw, a stronger judging panel and a prize pool worthy of the region's best speakers.</p><p>Registration details and the official call for adjudicators will be published soon. Follow our social channels for updates.</p>",
     authorName: "Organizing Committee",
     status: "published",
     isFeatured: false,
@@ -277,15 +277,15 @@ export const SAMPLE_TEAM: TeamMemberDTO[] = [
 export const SAMPLE_EVENTS: EventDTO[] = [
   {
     id: "demo-event-1",
-    title: "RPI Open Debate Tournament 2026",
+    title: "RGPI Open Debate Tournament 2026",
     slug: "rpi-open-debate-tournament-2026",
     category: "Debate Competition",
     description:
-      "<p>The flagship event of the Debating Club of RPI returns. Teams from polytechnics across northern Bangladesh will compete across four preliminary rounds, with the top eight breaking to the knockout stage.</p><h2>Format</h2><p>Asian Parliamentary, three-on-three, with a cap of 32 teams. A dedicated novice bracket runs alongside the open competition.</p><h2>What's included</h2><ul><li>Lunch and refreshments for all participants.</li><li>Certificates for every debater and adjudicator.</li><li>Trophies and prize money for the top three teams.</li></ul>",
+      "<p>The flagship event of DCRGPI returns. Teams from polytechnics across northern Bangladesh will compete across four preliminary rounds, with the top eight breaking to the knockout stage.</p><h2>Format</h2><p>Asian Parliamentary, three-on-three, with a cap of 32 teams. A dedicated novice bracket runs alongside the open competition.</p><h2>What's included</h2><ul><li>Lunch and refreshments for all participants.</li><li>Certificates for every debater and adjudicator.</li><li>Trophies and prize money for the top three teams.</li></ul>",
     image: img("photo-1540575467063-178a50c2df87"),
     startDate: daysAhead(21),
     endDate: daysAhead(21),
-    venue: "RPI Auditorium, Rangpur",
+    venue: "RGPI Auditorium, Rangpur",
     registrationDeadline: daysAhead(14),
     capacity: 96,
     status: "published",
@@ -309,7 +309,7 @@ export const SAMPLE_EVENTS: EventDTO[] = [
     capacity: 60,
     status: "published",
     registrationStatus: "open",
-    rules: "Open to all RPI students. Bring a notebook. Attendance for the full day is required to receive a certificate.",
+    rules: "Open to all RGPI students. Bring a notebook. Attendance for the full day is required to receive a certificate.",
     createdAt: daysAgo(12),
     updatedAt: daysAgo(3),
   },
@@ -342,7 +342,7 @@ export const SAMPLE_EVENTS: EventDTO[] = [
     image: img("photo-1517048676732-d65bc937f952"),
     startDate: daysAgo(18),
     endDate: daysAgo(18),
-    venue: "RPI Auditorium",
+    venue: "RGPI Auditorium",
     registrationDeadline: daysAgo(20),
     capacity: 50,
     status: "published",
@@ -354,7 +354,7 @@ export const SAMPLE_EVENTS: EventDTO[] = [
 ];
 
 export const SAMPLE_GALLERY: GalleryItemDTO[] = [
-  { id: "demo-gal-1", imageUrl: img("photo-1540575467063-178a50c2df87", 900), caption: "Opening round of the RPI Open 2025", album: "Competitions", eventId: "", displayOrder: 1, uploadedAt: daysAgo(30) },
+  { id: "demo-gal-1", imageUrl: img("photo-1540575467063-178a50c2df87", 900), caption: "Opening round of the RGPI Open 2025", album: "Competitions", eventId: "", displayOrder: 1, uploadedAt: daysAgo(30) },
   { id: "demo-gal-2", imageUrl: img("photo-1524178232363-1fb2b075b655", 900), caption: "Seminar on argumentation", album: "Workshops", eventId: "", displayOrder: 2, uploadedAt: daysAgo(24) },
   { id: "demo-gal-3", imageUrl: img("photo-1522202176988-66273c2fd55f", 900), caption: "Weekly Debate Lab in progress", album: "Training Sessions", eventId: "", displayOrder: 3, uploadedAt: daysAgo(18) },
   { id: "demo-gal-4", imageUrl: img("photo-1517486808906-6ca8b3f04846", 900), caption: "Freshers' orientation", album: "Campus Events", eventId: "", displayOrder: 4, uploadedAt: daysAgo(12) },
@@ -374,7 +374,7 @@ export const SAMPLE_NOTICES: NoticeDTO[] = [
   },
   {
     id: "demo-notice-2",
-    title: "RPI Open 2026 — team registration closes soon",
+    title: "RGPI Open 2026 — team registration closes soon",
     content: "Only a few slots remain for the flagship tournament. Register your team today.",
     status: "published",
     isImportant: false,
@@ -386,16 +386,21 @@ export const SAMPLE_NOTICES: NoticeDTO[] = [
 export const SAMPLE_MEMBERSHIP: MembershipDTO[] = [
   {
     id: "demo-app-1",
-    referenceNo: "DCRPI-2026-0001",
+    referenceNo: "DCRGPI-2026-0001",
     name: "Arif Hossain",
-    studentId: "RPI-2026-114",
+    studentId: "RGPI-2026-114",
     department: "Computer Technology",
     semester: "1st",
+    group: "A",
     email: "arif.hossain@example.com",
     phone: "01711000001",
     photo: "",
+    fatherName: "Abdul Hossain",
+    motherName: "Rahima Begum",
+    hasDebateExperience: "yes",
+    canCommitTime: "yes",
     experience: "Participated in school-level debate competitions for two years.",
-    motivation: "I want to become a confident speaker and represent RPI at national tournaments.",
+    motivation: "I want to become a confident speaker and represent RGPI at national tournaments.",
     activities: "Parliamentary debate, public speaking",
     status: "pending",
     submittedAt: daysAgo(1),
@@ -404,14 +409,19 @@ export const SAMPLE_MEMBERSHIP: MembershipDTO[] = [
   },
   {
     id: "demo-app-2",
-    referenceNo: "DCRPI-2026-0002",
+    referenceNo: "DCRGPI-2026-0002",
     name: "Sumaiya Akter",
-    studentId: "RPI-2026-087",
+    studentId: "RGPI-2026-087",
     department: "Electrical Technology",
     semester: "2nd",
+    group: "B",
     email: "sumaiya.akter@example.com",
     phone: "01811000002",
     photo: "",
+    fatherName: "Mizanur Rahman",
+    motherName: "Nasima Akter",
+    hasDebateExperience: "no",
+    canCommitTime: "yes",
     experience: "",
     motivation: "Debate helped me overcome stage fright in school and I want to keep growing.",
     activities: "Asian parliamentary, adjudication",

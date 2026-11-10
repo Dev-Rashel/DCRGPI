@@ -19,7 +19,7 @@ export function PostPlaceholder({ title, className }: { title: string; className
       <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full border border-gold-400/15" />
       <div className="absolute -bottom-10 -left-6 h-36 w-36 rounded-full border border-white/[0.05]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(238,196,106,0.14),transparent_55%)]" />
-      <span className="font-display text-5xl font-semibold tracking-tight text-gold-400/35">{letters || "RPI"}</span>
+      <span className="font-display text-5xl font-semibold tracking-tight text-gold-400/35">{letters || "DCRGPI"}</span>
     </div>
   );
 }
@@ -33,7 +33,7 @@ export function GalleryPlaceholder({ caption, className }: { caption?: string; c
       )}
       aria-hidden
     >
-      <span className="font-display text-lg text-gold-400/30">{caption || "DCRPI"}</span>
+      <span className="font-display text-lg text-gold-400/30">{caption || "DCRGPI"}</span>
     </div>
   );
 }

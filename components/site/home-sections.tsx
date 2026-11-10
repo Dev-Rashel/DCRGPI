@@ -100,13 +100,13 @@ export function TeamPreview({ members }: { members: TeamMemberDTO[] }) {
                 The people behind <span className="gold-text italic">the podium</span>
               </>
             }
-            description="A team of student leaders, trainers and debaters who keep the club moving — and make sure every new voice gets a fair hearing."
+            description="শিক্ষার্থী নেতা, প্রশিক্ষক ও বিতার্কিকদের একটি দল — যারা ক্লাবকে এগিয়ে নিয়ে যায় এবং প্রতিটি নতুন কণ্ঠকে ন্যায্য সুযোগ নিশ্চিত করে।"
             action={
               <Link
                 href="/team"
                 className="group inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-cream transition hover:border-gold-400/50 hover:text-gold-200"
               >
-                View full team <ArrowUpRight className="h-3.5 w-3.5 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                View the full team <ArrowUpRight className="h-3.5 w-3.5 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </Link>
             }
           />
@@ -128,7 +128,7 @@ export function StatsSection({ settings }: { settings: SiteSettings }) {
   return (
     <section id="stats" className="relative overflow-hidden py-20 sm:py-24">
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center" aria-hidden>
-        <span className="select-none font-display text-[22vw] font-bold leading-none text-white/[0.018]">RPI</span>
+        <span className="select-none font-display text-[22vw] font-bold leading-none text-white/[0.018]">DCRGPI</span>
       </div>
       <div className="container-narrow relative">
         <Reveal>
@@ -138,8 +138,7 @@ export function StatsSection({ settings }: { settings: SiteSettings }) {
               <h2 className="text-display-md font-semibold text-cream">A record built on voices</h2>
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-cream/50">
-              Years of practice rounds, late-night research and standing ovations — measured in the moments that
-              shaped our members.
+              বছরের পর বছর প্র্যাকটিস, রাত জেগে গবেষণা আর দাঁড়িয়ে থাকা করতালি — প্রতিটি মুহূর্তে গড়ে উঠেছে আমাদের সদস্যরা।
             </p>
           </div>
         </Reveal>
@@ -174,13 +173,13 @@ export function LatestPosts({ posts }: { posts: PostDTO[] }) {
                 Latest <span className="gold-text italic">stories</span>
               </>
             }
-            description="Announcements, achievements, debate resources and everything happening inside the club."
+            description="ঘোষণা, অর্জন, বিতর্কের রিসোর্স ও ক্লাবের ভেতরে যা কিছু ঘটছে — সবকিছু এক জায়গায়।"
             action={
               <Link
                 href="/posts"
                 className="group inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-cream transition hover:border-gold-400/50 hover:text-gold-200"
               >
-                View all posts <ArrowUpRight className="h-3.5 w-3.5" />
+                All posts <ArrowUpRight className="h-3.5 w-3.5" />
               </Link>
             }
           />
@@ -195,7 +194,7 @@ export function LatestPosts({ posts }: { posts: PostDTO[] }) {
           </div>
         ) : (
           <p className="mt-12 rounded-2xl border border-dashed border-white/10 p-10 text-center text-sm text-cream/50">
-            No stories published yet. Check back soon.
+            এখনো কোনো গল্প প্রকাশিত হয়নি। শিগগিরই আবার দেখুন।
           </p>
         )}
       </div>
@@ -215,7 +214,7 @@ export function UpcomingEvents({ events }: { events: EventDTO[] }) {
                 Upcoming <span className="gold-text italic">events</span>
               </>
             }
-            description="Tournaments, workshops and open sessions. Find your next stage."
+            description="টুর্নামেন্ট, ওয়ার্কশপ ও উন্মুক্ত সেশন। খুঁজে নিন আপনার পরের মঞ্চ।"
             action={
               <Link
                 href="/events"
@@ -236,7 +235,7 @@ export function UpcomingEvents({ events }: { events: EventDTO[] }) {
           </div>
         ) : (
           <p className="mt-12 rounded-2xl border border-dashed border-white/10 p-10 text-center text-sm text-cream/50">
-            No upcoming events right now. Follow our social pages for announcements.
+            এখন কোনো আসন্ন ইভেন্ট নেই। নতুন ঘোষণার জন্য আমাদের সোশ্যাল পেজ ফলো করুন।
           </p>
         )}
       </div>
@@ -254,10 +253,10 @@ export function GalleryPreview({ items }: { items: GalleryItemDTO[] }) {
             eyebrow="Moments"
             title={
               <>
-                From the <span className="gold-text italic">floor</span>
+                From the floor, <span className="gold-text italic">in frames</span>
               </>
             }
-            description="Competitions, workshops and the quiet moments in between — a glimpse of club life."
+            description="প্রতিযোগিতা, ওয়ার্কশপ আর তার মাঝের নীরব মুহূর্তগুলো — ক্লাব জীবনের এক ঝলক।"
             action={
               <Link
                 href="/gallery"

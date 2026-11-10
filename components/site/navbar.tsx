@@ -59,14 +59,14 @@ export function Navbar({ settings }: { settings: SiteSettings }) {
       )}
     >
       <div className="container-narrow flex items-center justify-between gap-4">
-        <Link href="/" className="group flex items-center gap-3" aria-label="Debating Club of RPI — home">
+        <Link href="/" className="group flex items-center gap-3" aria-label="DCRGPI — home">
           <Logo settings={settings} />
           <span className="flex flex-col leading-tight">
             <span className="font-display text-[1.02rem] font-semibold tracking-tight text-cream sm:text-[1.12rem]">
-              Debating Club <span className="text-gold-400">of RPI</span>
+              DCRGPI
             </span>
             <span className="hidden text-[0.6rem] uppercase tracking-[0.22em] text-cream/45 sm:block">
-              Rangpur Govt. Polytechnic Institute
+              Debating Club of Rangpur Govt. Polytechnic Institute
             </span>
           </span>
         </Link>

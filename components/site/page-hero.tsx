@@ -8,12 +8,14 @@ export function PageHero({
   description,
   children,
   breadcrumb,
+  showCta = true,
 }: {
   eyebrow: string;
   title: ReactNode;
   description?: string;
   children?: ReactNode;
   breadcrumb?: { label: string; href?: string }[];
+  showCta?: boolean;
 }) {
   return (
     <section className="relative overflow-hidden border-b border-white/[0.07] pb-16 pt-32 sm:pb-20 sm:pt-36 lg:pb-24 lg:pt-44">
@@ -48,12 +50,14 @@ export function PageHero({
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-cream/60 sm:text-lg">{description}</p>
         )}
         {children && <div className="mt-8">{children}</div>}
-        <Link
-          href="/register"
-          className="mt-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-gold-300 transition hover:text-gold-200"
-        >
-          Become a member <ArrowRight className="h-3.5 w-3.5" />
-        </Link>
+        {showCta && (
+          <Link
+            href="/register"
+            className="mt-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-gold-300 transition hover:text-gold-200"
+          >
+            Become a member <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
+        )}
       </div>
     </section>
   );

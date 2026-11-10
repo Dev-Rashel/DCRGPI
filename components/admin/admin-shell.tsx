@@ -95,7 +95,7 @@ export function AdminShell({
       <div className="flex h-16 items-center gap-3 border-b border-white/[0.07] px-5">
         <Logo settings={settings} size="sm" />
         <div className="min-w-0">
-          <p className="truncate font-display text-sm font-semibold text-cream">DCRPI Admin</p>
+          <p className="truncate font-display text-sm font-semibold text-cream">DCRGPI Admin</p>
           <p className="text-[0.58rem] uppercase tracking-[0.16em] text-cream/30">Content studio</p>
         </div>
       </div>
@@ -214,7 +214,7 @@ export function AdminShell({
           <div className="min-w-0">
             <h1 className="truncate font-display text-lg font-semibold text-cream">{titleFor(pathname)}</h1>
             <p className="hidden text-[0.6rem] uppercase tracking-[0.16em] text-cream/30 sm:block">
-              Debating Club of RPI · Management
+              DCRGPI · Management
             </p>
           </div>
           <div className="ml-auto flex items-center gap-3">

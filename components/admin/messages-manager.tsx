@@ -66,7 +66,7 @@ export function MessagesManager({ initialItems, demo }: { initialItems: ContactM
 
   const exportCsv = () => {
     downloadCsv(
-      `dcrpi-messages-${new Date().toISOString().slice(0, 10)}.csv`,
+      `dcrgpi-messages-${new Date().toISOString().slice(0, 10)}.csv`,
       ["Name", "Email", "Subject", "Message", "Status", "Submitted"],
       items.map((item) => [item.name, item.email, item.subject, item.message, item.status, item.submittedAt])
     );

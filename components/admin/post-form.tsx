@@ -21,6 +21,11 @@ import type { PostDTO } from "@/lib/types";
 
 type FormValues = z.infer<typeof postSchema>;
 
+const PUBLIC_HOST = (process.env.NEXT_PUBLIC_SITE_URL ?? "")
+  .replace(/^https?:\/\//, "")
+  .replace(/\/$/, "");
+const PREVIEW_HOST = PUBLIC_HOST && !PUBLIC_HOST.startsWith("localhost") ? PUBLIC_HOST : "dcrgpi.vercel.app";
+
 const EMPTY: FormValues = {
   title: "",
   slug: "",
@@ -137,7 +142,7 @@ export function PostForm({ post, demo = false }: { post?: PostDTO; demo?: boolea
           <FormSection title="Story" description="The headline, summary and full article body.">
             <div className="space-y-4">
               <Field label="Title" htmlFor="title" error={errors.title?.message} required>
-                <Input id="title" placeholder="e.g. RPI Debaters Reach the Semi-Finals" {...register("title")} />
+                <Input id="title" placeholder="e.g. DCRGPI Debaters Reach the Semi-Finals" {...register("title")} />
               </Field>
 
               <Field
@@ -148,7 +153,7 @@ export function PostForm({ post, demo = false }: { post?: PostDTO; demo?: boolea
                 required
               >
                 <div className="flex gap-2">
-                  <Input id="slug" placeholder="rpi-debaters-semi-finals" {...register("slug", { onChange: () => (slugEdited.current = true) })} />
+                  <Input id="slug" placeholder="dcrgpi-debaters-semi-finals" {...register("slug", { onChange: () => (slugEdited.current = true) })} />
                   <button
                     type="button"
                     className="shrink-0 rounded-lg border border-white/10 px-3 text-[0.62rem] font-semibold uppercase tracking-[0.08em] text-cream/50 transition hover:border-gold-400/40 hover:text-gold-200"
@@ -232,7 +237,7 @@ export function PostForm({ post, demo = false }: { post?: PostDTO; demo?: boolea
               </p>
               <div className="rounded-lg border border-white/[0.07] bg-white/[0.02] p-3">
                 <p className="truncate text-[0.65rem] text-emerald-300/70">
-                  dcrpi.vercel.app/posts/{watch("slug") || "your-slug"}
+                  {PREVIEW_HOST}/posts/{watch("slug") || "your-slug"}
                 </p>
                 <p className="mt-1 line-clamp-2 font-display text-sm text-cream/80">
                   {title || "Your post title appears here"}

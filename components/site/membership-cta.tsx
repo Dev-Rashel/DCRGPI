@@ -22,8 +22,8 @@ export function MembershipCta() {
               The stage is set. <span className="gold-text italic">Will you speak?</span>
             </h2>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-cream/65">
-              Join a community that will challenge your thinking, sharpen your voice and stand beside you every time
-              you take the floor. No experience needed — just the courage to begin.
+              এমন একটি কমিউনিটিতে যোগ দিন, যারা আপনার চিন্তাকে চ্যালেঞ্জ করবে, আপনার কণ্ঠকে ধার দেবে এবং প্রতিবার
+              ফ্লোরে দাঁড়ালে আপনার পাশে থাকবে। অভিজ্ঞতার দরকার নেই — শুধু শুরু করার সাহসটুকুই যথেষ্ট।
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <Link

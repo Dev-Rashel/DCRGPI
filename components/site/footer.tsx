@@ -18,10 +18,10 @@ export function Footer({ settings }: { settings: SiteSettings }) {
               <Logo settings={settings} />
               <span className="flex flex-col leading-tight">
                 <span className="font-display text-lg font-semibold text-cream">
-                  Debating Club <span className="text-gold-400">of RPI</span>
+                  DCRGPI
                 </span>
                 <span className="text-[0.6rem] uppercase tracking-[0.22em] text-cream/45">
-                  Rangpur Govt. Polytechnic Institute
+                  Debating Club of Rangpur Govt. Polytechnic Institute
                 </span>
               </span>
             </Link>

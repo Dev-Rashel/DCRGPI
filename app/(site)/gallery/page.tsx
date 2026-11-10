@@ -8,7 +8,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Gallery",
   description:
-    "Photos from Debating Club of RPI competitions, workshops, training sessions and campus events.",
+    "Photos from DCRGPI competitions, workshops, training sessions and campus events.",
   alternates: { canonical: "/gallery" },
 };
 
@@ -24,7 +24,7 @@ export default async function GalleryPage() {
             Moments worth <span className="gold-text italic">remembering</span>
           </>
         }
-        description="Late-night prep, first speeches, trophy lifts and the community in between. Browse our albums from events, workshops and competitions."
+        description="রাত জেগে প্রস্তুতি, প্রথম বক্তব্য, ট্রফি হাতে তোলা আর তার মাঝের কমিউনিটি — ইভেন্ট, ওয়ার্কশপ ও প্রতিযোগিতার অ্যালবাম ঘুরে দেখুন।"
         breadcrumb={[{ label: "Gallery" }]}
       />
       <section className="py-16 sm:py-20">

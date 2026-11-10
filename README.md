@@ -1,6 +1,6 @@
-# Debating Club of RPI — Website & Content Management System
+# DCRGPI — Website & Content Management System
 
-The official website of the **Debating Club of RPI**, Rangpur Government Polytechnic Institute — plus a complete admin panel for managing every piece of content on the site.
+The official website of **DCRGPI** (Debating Club of Rangpur Government Polytechnic Institute) — plus a complete admin panel for managing every piece of content on the site.
 
 Built with Next.js (App Router), TypeScript, Tailwind CSS, MongoDB/Mongoose, Zod and Framer Motion.
 
@@ -71,8 +71,8 @@ All writes go through REST API route handlers with Zod validation, HTML sanitisa
 ### 2. Install
 
 ```bash
-git clone <your-repository-url> dcrpi
-cd dcrpi
+git clone <your-repository-url> dcrgpi
+cd dcrgpi
 npm install
 ```
 
@@ -89,9 +89,9 @@ Fill in `.env.local`:
 
 | Variable | Required | Purpose |
 | --- | --- | --- |
-| `MONGODB_URI` | Yes (for persistence) | MongoDB Atlas connection string, e.g. `mongodb+srv://user:pass@cluster.mongodb.net/dcrpi?retryWrites=true&w=majority`. |
+| `MONGODB_URI` | Yes (for persistence) | MongoDB Atlas connection string, e.g. `mongodb+srv://user:pass@cluster.mongodb.net/dcrgpi?retryWrites=true&w=majority`. |
 | `AUTH_SECRET` | Yes in production | Random secret used to sign admin sessions. Generate with `openssl rand -base64 32`. Minimum 16 characters; use 32+. |
-| `NEXT_PUBLIC_SITE_URL` | Yes | Public base URL, e.g. `http://localhost:3000` locally or `https://dcrpi.vercel.app` in production. Used for metadata, sitemap and absolute links. |
+| `NEXT_PUBLIC_SITE_URL` | Yes | Public base URL, e.g. `http://localhost:3000` locally or `https://dcrgpi.vercel.app` in production. Used for metadata, sitemap and absolute links. |
 | `ADMIN_NAME` | Recommended | Display name for the seeded administrator. |
 | `ADMIN_EMAIL` | Yes for seeding | Email address for the administrator account. |
 | `ADMIN_PASSWORD` | Yes for seeding | Administrator password (minimum 8 characters). Never commit this. |
@@ -276,6 +276,7 @@ middleware.ts           Admin route protection
 
 ## Design & content management notes
 
+- The club logo lives at `public/logo.png` and is used in the header, footer and admin panel. It can also be replaced from **Admin → Settings → Logo & identity**. The browser tab icon uses `app/icon.png`.
 - The public site reads settings on every request (`force-dynamic`), so changes saved in **Admin → Settings** appear immediately.
 - Homepage sections can be hidden or reordered; notices are always rendered separately at the top.
 - Posts, events and notices support drafts. Drafts are never returned by public GET endpoints.
@@ -292,4 +293,4 @@ middleware.ts           Admin route protection
 
 ## License
 
-Created for the Debating Club of RPI. All content and branding belong to the club.
+Created for DCRGPI — Debating Club of Rangpur Government Polytechnic Institute. All content and branding belong to the club.

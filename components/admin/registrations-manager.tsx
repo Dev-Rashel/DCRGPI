@@ -81,7 +81,7 @@ export function RegistrationsManager({
 
   const exportCsv = () => {
     downloadCsv(
-      `dcrpi-registrations-${eventTitle.toLowerCase().replace(/[^a-z0-9]+/g, "-")}.csv`,
+      `dcrgpi-registrations-${eventTitle.toLowerCase().replace(/[^a-z0-9]+/g, "-")}.csv`,
       ["Reference", "Name", "Student ID", "Department", "Email", "Phone", "Status", "Registered"],
       filtered.map((item) => [
         item.referenceNo,
